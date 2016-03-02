@@ -13,6 +13,7 @@ class GramsController < ApplicationController
     @gram = Gram.find_by_id(params[:id])
     return render_not_found if @gram.blank?
   end
+
   def create
     @gram = current_user.grams.create(gram_params)
     if @gram.valid?
@@ -27,7 +28,6 @@ class GramsController < ApplicationController
     return render_not_found if @gram.blank?
     return render_not_found(:forbidden) if @gram.user != current_user
   end
-
 
   def update
     @gram = Gram.find_by_id(params[:id])
@@ -50,7 +50,7 @@ class GramsController < ApplicationController
     redirect_to root_path
   end
 
-
+  
   private
 
   def gram_params

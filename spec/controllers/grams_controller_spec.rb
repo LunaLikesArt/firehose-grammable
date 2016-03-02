@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe GramsController, type: :controller do
 
+
+
   describe "grams#destroy" do
     it "should not allow users who did not create the gram destroy it" do
       p = FactoryGirl.create(:gram)
@@ -33,6 +35,7 @@ RSpec.describe GramsController, type: :controller do
       expect(response).to redirect_to new_user_session_path
     end
   end
+
 
 
   describe "grams#update" do
@@ -77,6 +80,7 @@ RSpec.describe GramsController, type: :controller do
   end
 
 
+
   describe "grams#edit" do
     it "shouldn't let a user who didn't create the gram edit it" do
       p = FactoryGirl.create(:gram)
@@ -108,6 +112,7 @@ RSpec.describe GramsController, type: :controller do
   end
 
 
+
   describe "grams#show action" do
     it "should successfully show the page if the gram is found" do
       gram = FactoryGirl.create(:gram)
@@ -122,12 +127,14 @@ RSpec.describe GramsController, type: :controller do
   end
 
 
+
   describe "grams#index action" do
     it "should successfully show the page" do
       get :index
       expect(response).to have_http_status(:success)
     end
   end
+
 
 
   describe "grams#new action" do
@@ -145,6 +152,7 @@ RSpec.describe GramsController, type: :controller do
   end
 
 
+
   describe "grams#create action" do
     it "should require users to be signed in" do
       post :create, gram: {message: 'Hello!'}
@@ -154,7 +162,7 @@ RSpec.describe GramsController, type: :controller do
     it "should successfully create a new gram in our database" do
       user = FactoryGirl.create(:user)
       sign_in user
-      post :create, gram: {message: 'Hello!'}
+      post :create, gram: {message: 'Hello!', picture: fixture_file_upload("/picture.png", 'image/png')}
       expect(response).to redirect_to root_path
       gram = Gram.last
       expect(gram.message).to eql("Hello!")
