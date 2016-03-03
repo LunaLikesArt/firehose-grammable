@@ -65,13 +65,23 @@ input {
 }
 
 .post-button {
-  background-color: #125688;
+  background-color: #0047b3;
   width: 100%;
   border: none;
   font-size: 24px;
   color: white;
   margin-top: 10px;
   font-family: 'Josefin Sans', sans-serif;
+}
+
+.post-button:hover {
+    color:#fff;
+      background-color: #003d99;
+}
+
+.post-button:hover {
+    color:#fff;
+      background-color: #003d99;
 }
 
 .input.boolean {
