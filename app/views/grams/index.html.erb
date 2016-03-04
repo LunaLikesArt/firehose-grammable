@@ -4,10 +4,13 @@
     <div class="handle">
       <!-- <%= gram.user.email %> -->
     </div>
-    <%= image_tag gram.picture, class: 'img-responsive' %>
+    <div class="image">
+      <%= image_tag gram.picture, class: 'img-responsive' %>
+    </div>
     <p>
       <%= gram.message %>
       <p>
+
 
         <div class="gram-actions pull-right">
           <% if current_user == gram.user %>
@@ -20,23 +23,25 @@
 
         <div class="comments">
           <h3> Comments </h3>
+          <br />
           <% gram.comments.each do |comment| %>
           <div class="comment">
             <!-- <span class="comment_handle">
-              <%= comment.user.email %>
-            </span> -->
+            <%= comment.user.email %>
+          </span> -->
 
-            <%= comment.message %>
-          </div>
-          <% end %>
-          <br />
-          <br />
-          <%= simple_form_for Comment.new, url: gram_comments_path(gram) do |f| %>
-          <%= f.input :message, label: "Add a comment" %>
-          <%= f.submit 'Post', class: 'post-button' %>
-          <% end %>
+          <%= comment.message %>
+            <hr>
         </div>
-
+        <% end %>
+        <br />
+        <br />
+        <%= simple_form_for Comment.new, url: gram_comments_path(gram) do |f| %>
+        <%= f.input :message, label: "Add a comment" %>
+        <%= f.submit 'Post', class: 'post-button' %>
+        <% end %>
       </div>
-      <% end %>
+
     </div>
+    <% end %>
+  </div>

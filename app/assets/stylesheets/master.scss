@@ -1,6 +1,7 @@
 body {
   background-color: #F8F8F8;
   font-family: 'Josefin Sans', sans-serif;
+  color: #545759;
 }
 
 .top-nav {
@@ -65,7 +66,7 @@ input {
 }
 
 .post-button {
-  background-color: #0047b3;
+  background-color: #0057A0;
   width: 100%;
   border: none;
   font-size: 24px;
@@ -76,12 +77,12 @@ input {
 
 .post-button:hover {
     color:#fff;
-      background-color: #003d99;
+      background-color: #0067B0;
 }
 
 .post-button:hover {
     color:#fff;
-      background-color: #003d99;
+      background-color: #0067B0;
 }
 
 .input.boolean {
@@ -107,4 +108,9 @@ input {
 
 .comment {
   font-size: 16px;
+}
+
+.image {
+  padding-left: 10px;
+  padding-right: 10px;
 }
