@@ -27,23 +27,35 @@
           <% gram.comments.each do |comment| %>
 
           <div class="col-xs-12 col-md-6 comment">
-            <!-- <span class="comment_handle">
-            <%= comment.user.email %>
-          </span> -->
-          <blockquote>
-            <%= comment.message %>
-          </blockquote>
+            <blockquote>
+              <%= comment.message %>
+            </blockquote>
+          </div>
+          <% end %>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+          <div class="row">
+            <div class="new-comment">
+              <br />
+              <br />
+              <%= simple_form_for Comment.new, url: gram_comments_path(gram) do |f| %>
+              <%= f.input :message, label: "Add a comment" %>
+              <%= f.submit 'Post', class: 'post-button' %>
+              <% end %>
+            </div>
+          </div>
+
+
+        </div>
 
       </div>
       <% end %>
-      <br />
-      <br />
-      <%= simple_form_for Comment.new, url: gram_comments_path(gram) do |f| %>
-      <%= f.input :message, label: "Add a comment" %>
-      <%= f.submit 'Post', class: 'post-button' %>
-      <% end %>
     </div>
-
-  </div>
-  <% end %>
-</div>
