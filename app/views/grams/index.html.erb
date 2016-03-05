@@ -11,7 +11,6 @@
       <%= gram.message %>
       <p>
 
-
         <div class="gram-actions pull-right">
           <% if current_user == gram.user %>
           <%= link_to 'Edit', edit_gram_path(gram) %>
@@ -26,7 +25,6 @@
               <br />
               <% gram.comments.each do |comment| %>
 
-
               <div class="col-xs-12 col-md-6 comment">
                 <blockquote>
                   <%= comment.message %>
@@ -36,20 +34,13 @@
             </div>
           </div>
 
-
-              <div class="new-comment">
-                <br />
-                <br />
-                <%= simple_form_for Comment.new, url: gram_comments_path(gram) do |f| %>
-                <%= f.input :message, label: "Add a comment" %>
-                <%= f.submit 'Post', class: 'post-button' %>
-                <% end %>
-              </div>
-
-
-
+          <div class="new-comment">
+            <%= simple_form_for Comment.new, url: gram_comments_path(gram) do |f| %>
+            <%= f.input :message, label: "Add a comment" %>
+            <%= f.submit 'Post', class: 'post-button' %>
+            <% end %>
+          </div>
         </div>
-
       </div>
       <% end %>
     </div>
