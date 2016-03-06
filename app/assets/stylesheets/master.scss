@@ -36,7 +36,7 @@ body {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
   border: 1px solid #e8e8e8;
   padding: 10px;
-  margin-top: 40px;
+  margin-top: 20px;
   padding: 0;
 }
 
@@ -76,13 +76,13 @@ input {
 }
 
 .post-button:hover {
-    color:#fff;
-      background-color: #0067B0;
+  color:#fff;
+  background-color: #0067B0;
 }
 
 .post-button:hover {
-    color:#fff;
-      background-color: #0067B0;
+  color:#fff;
+  background-color: #0067B0;
 }
 
 .input.boolean {
@@ -116,4 +116,18 @@ input {
 .image {
   padding-left: 10px;
   padding-right: 10px;
+}
+
+#accordion {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+
+}
+
+.alert {
+  text-align: center;
+  font-size: 18px;
+  color: #b94a48;
+  margin-top: 20px;
+  margin-bottom: 0
 }
